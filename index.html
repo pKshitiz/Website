@@ -1,0 +1,157 @@
+import React from "react";
+import { motion } from "framer-motion";
+
+export default function Portfolio() {
+  const projects = [
+    {
+      title: "Music Edits Reels",
+      desc: "A compilation of short creative edits I’ve made for TikTok and Instagram.",
+      link: "https://www.tiktok.com/@xitiz",
+    },
+    {
+      title: "Short Film Visuals",
+      desc: "Experimental visuals and cinematic cuts crafted for content collaborations.",
+      link: "#",
+    },
+    {
+      title: "Social Media Highlights",
+      desc: "A showcase of my favorite content across platforms.",
+      link: "https://www.instagram.com/k7pun",
+    },
+  ];
+
+  const skills = ["Video Editing", "Color Grading", "Motion Design", "Music Sync", "Storytelling", "Social Media Content"];
+
+  const socials = {
+    tiktok: "https://www.tiktok.com/@xitiz",
+    instagram: "https://www.instagram.com/k7pun",
+    facebook: "https://www.facebook.com/XIT1",
+  };
+
+  return (
+    <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-gray-800 text-white">
+      <header className="max-w-5xl mx-auto p-6 flex items-center justify-between">
+        <div className="text-xl font-semibold">Kshitiz Pun</div>
+        <nav className="space-x-4 text-sm">
+          <a href="#about" className="hover:underline">About</a>
+          <a href="#projects" className="hover:underline">Projects</a>
+          <a href="#contact" className="hover:underline">Contact</a>
+        </nav>
+      </header>
+
+      <main className="max-w-5xl mx-auto p-6">
+        {/* HERO */}
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center py-12">
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
+              Hey, I’m <span className="text-indigo-400">Kshitiz Pun</span> 🎧
+            </h1>
+            <p className="text-lg text-gray-300 mb-6">
+              I’m a content creator and video editor who loves storytelling through visuals.
+              Music inspires my edits — I turn rhythm into motion. Always exploring new creative styles.
+            </p>
+
+            <div className="flex gap-4">
+              <a href="#projects" className="inline-block px-5 py-3 rounded-lg bg-indigo-500 text-white font-medium">
+                Watch my work
+              </a>
+              <a href={socials.instagram} target="_blank" rel="noreferrer" className="inline-block px-5 py-3 rounded-lg border border-gray-600">
+                Instagram
+              </a>
+            </div>
+          </motion.div>
+
+          <motion.div
+            className="flex justify-center md:justify-end"
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="w-64 h-64 md:w-80 md:h-80 rounded-2xl bg-gradient-to-br from-indigo-500/20 to-indigo-800/20 shadow-lg flex items-center justify-center">
+              <div className="text-center">
+                <div className="text-2xl font-semibold">🎬</div>
+                <div className="text-sm text-gray-400">Video Editor</div>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* ABOUT */}
+        <section id="about" className="py-8 border-t border-gray-700">
+          <h2 className="text-2xl font-semibold mb-4">About me</h2>
+          <p className="text-gray-300 mb-4">
+            I’m a passionate content creator and video editor from Nepal who loves music and visual storytelling.
+            My work focuses on creating emotional, rhythmic edits for social platforms — TikTok, Instagram, and more.
+            When I’m not editing, I’m usually discovering new tracks or experimenting with effects.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <h3 className="font-semibold mb-2">Skills</h3>
+              <div className="flex flex-wrap gap-2">
+                {skills.map((s) => (
+                  <span key={s} className="px-3 py-1 rounded-full bg-gray-700 text-sm">{s}</span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-2">Quick stats</h3>
+              <ul className="text-gray-400 space-y-1">
+                <li>• Years creating: 2+</li>
+                <li>• Favorite music genre: Chill & Lo-fi</li>
+                <li>• Platforms: TikTok, Instagram, Facebook</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        {/* PROJECTS */}
+        <section id="projects" className="py-8 border-t border-gray-700">
+          <h2 className="text-2xl font-semibold mb-4">My work</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {projects.map((p) => (
+              <motion.a
+                key={p.title}
+                href={p.link}
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-xl p-5 bg-gray-900 hover:bg-gray-800 shadow-sm hover:shadow-md transition"
+                whileHover={{ y: -4 }}
+              >
+                <h3 className="font-semibold mb-2 text-indigo-300">{p.title}</h3>
+                <p className="text-sm text-gray-400">{p.desc}</p>
+              </motion.a>
+            ))}
+          </div>
+        </section>
+
+        {/* CONTACT */}
+        <section id="contact" className="py-8 border-t border-gray-700">
+          <h2 className="text-2xl font-semibold mb-4">Let’s connect</h2>
+          <p className="text-gray-300 mb-4">Follow or message me on any of my socials:</p>
+
+          <div className="flex flex-col md:flex-row gap-4">
+            <a href={socials.tiktok} target="_blank" rel="noreferrer" className="inline-block px-5 py-3 rounded-lg bg-indigo-500 text-white font-medium">
+              TikTok
+            </a>
+            <a href={socials.instagram} target="_blank" rel="noreferrer" className="inline-block px-5 py-3 rounded-lg border border-gray-600">
+              Instagram
+            </a>
+            <a href={socials.facebook} target="_blank" rel="noreferrer" className="inline-block px-5 py-3 rounded-lg border border-gray-600">
+              Facebook
+            </a>
+          </div>
+        </section>
+
+        <footer className="py-10 text-center text-sm text-gray-500">
+          © {new Date().getFullYear()} Kshitiz Pun — Made with 🎧 & 🎥 by me.
+        </footer>
+      </main>
+    </div>
+  );
+}

@@ -1,38 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kshitiz</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: white;
-      text-align: center;
-      margin-top: 100px;
-    }
-    h1 {
-      font-size: 30px;
-      margin-bottom: 30px;
-    }
-    a {
-      display: block;
-      color: #00acee;
-      text-decoration: none;
-      font-size: 20px;
-      margin: 10px 0;
-    }
-    a:hover {
-      color: #ff0066;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kshitiz | Portfolio</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"> 
 </head>
 <body>
-  <h1>Too busy to make a proper website</h1>
-  <a href="https://www.tiktok.com/@xitiz" target="_blank">TikTok</a>
-  <a href="https://www.facebook.com/xit1z" target="_blank">Facebook</a>
-  <a href="https://www.instagram.com/k7pun" target="_blank">Instagram</a>
+    <header>
+        <h1>Kshitiz<span style="color: red;"></span></h1>
+        <nav>
+            <a href="#home"><span>Home</span></a>
+            <a href="#about"><span>About</span></a>
+            <a href="#contact"><span>Contact</span></a>
+        </nav>
+    </header>
+
+      <section
+    <!-- HOME SECTION -->
+    <section id="home" class="hero">
+        <img src="pfp.jpg" alt="Profile Picture">
+        <div class="hero-text">
+            <h2>
+                I am 
+                <span>
+                    <span>Kshitiz</span>
+                    <span>a Coder</span>
+                    <span>a Video editor</span>
+                    <span>a Student</span>
+                    <span>a developer</span>
+                </span>
+            </h2>
+            <h2>Welcome to My Portfolio 👋</h2>
+            <p>
+                Hi, I'm <strong>Kshitiz</strong> — a creative learner passionate about design, technology, and turning ideas into real projects.
+            </p>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="about-container">
+
+                <div class="about-text">
+                <p>
+                    I started exploring the digital world through editing and gaming, and that curiosity led me to web development and design.  
+                    I enjoy experimenting with visuals and learning how things work behind the screen.  
+                    I enjoy exploring new tools, experimenting with animation effects, and constantly learning to improve my craft.  
+                    When I’m not working on something digital, you'll probably find me listening to music or brainstorming creative ideas for my next project.
+                </p>
+                </div>
+            </div>
+            
+            <!-- SKILLS SECTION -->
+            <div class="skills-section">
+            <h2>Skills</h2>
+
+           
+  <!-- Graphic Design -->
+  <div class="skills-category">
+    <h3>🎥 Video Editing</h3>
+    <div class="skills-grid">
+      <div class="skill bright-bg"><img src="./Adobe_After_Effects.png" alt="After Effects"><span>Adobe After Effects</span></div>
+      <div class="skill bright-bg"><img src="./Capcut.png" alt="Capcut"><span>Capcut</span></div>
+      <div class="skill bright-bg"><img src="./alight motion.png" alt="Alight Motion"><span>Alight Motion</span></div>
+    </div>
+  </div>
+</div>
+        </section>
+
+    <!-- CONTACT SECTION -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <p>Interested in working together or just want to say hi? Let’s connect!</p>
+
+            <div class="contact-links">
+                <a href="mailto:kshitizmgrx@gmail.com?subject=Hello%20Elow&body=Hi%20there!%20I%20loved%20your%20portfolio.">
+                <i class="fa-solid fa-envelope"></i> Email
+                </a>
+                <a href="https://www.instagram.com/k7pun/" target="_blank">
+                <i class="fa-brands fa-instagram"></i> Instagram
+                </a>
+                <a href="https://tiktok.com/@xitiz" target="_blank">
+                <i class="fa-brands fa-tiktok"></i> TikTok
+                </a>
+                <a href="https://www.facebook.com/@xit1z" target="_blank">
+                <i class="fa-brands fa-facebook"></i> Facebook
+                </a>
+            </div>
+
+        </section>
+
+        <footer>© 2025 Kshitiz. All Rights Reserved.</footer>
+
+
+    <script>
+        document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+            window.scrollTo({
+                top: targetSection.offsetTop - 80, // offset for fixed header
+                behavior: 'smooth'
+            });
+            }
+        });
+        });
+    </script>
+
 </body>
 </html>
-
